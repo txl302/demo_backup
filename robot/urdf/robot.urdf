@@ -1,0 +1,279 @@
+<robot
+  name="robot">
+  <link name="world"/>
+  <joint name="joint_fix" type="fixed">
+    <parent link="world"/>
+    <child link="base_link"/>
+  </joint>
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.158521271152247 0.249959501847145 0.530785966844897"
+        rpy="0 0 0" />
+      <mass
+        value="17.8923575005348" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.780392156862745 0.76078431372549 0.741176470588235 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="base_link">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <link
+    name="link1">
+    <inertial>
+      <origin
+        xyz="1.68454688698194E-07 0.164275740780367 -0.0669943121573496"
+        rpy="0 0 0" />
+      <mass
+        value="19.3943177662416" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot/meshes/link1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.780392156862745 0.76078431372549 0.741176470588235 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot/meshes/link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="link1">
+    <material>Gazebo/Yellow</material>
+  </gazebo>
+  <joint
+    name="joint1"
+    type="revolute">
+    <origin
+      xyz="0.158521265718797 -0.530785793967691 0.315563406285809"
+      rpy="1.5707963267949 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="link1" />
+    <axis
+      xyz="0 1 0" />
+    <limit effort="100" velocity="100" lower="0" upper="3.1416"/>
+  </joint>
+  <link
+    name="link2">
+    <inertial>
+      <origin
+        xyz="0.0328384782772146 0.274326458730004 3.31401572850609E-14"
+        rpy="0 0 0" />
+      <mass
+        value="20.8227875150365" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot/meshes/link2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.909803921568627 0.443137254901961 0.0313725490196078 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot/meshes/link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="link2">
+    <material>Gazebo/Yellow</material>
+  </gazebo>
+  <joint
+    name="joint2"
+    type="revolute">
+    <origin
+      xyz="0 0.322732802998902 -0.250383739680009"
+      rpy="0 0 0" />
+    <parent
+      link="link1" />
+    <child
+      link="link2" />
+    <axis
+      xyz="1 0 0" />
+    <limit effort="100" velocity="100" lower="0" upper="3.1416"/>
+  </joint>
+  <link
+    name="link3">
+    <inertial>
+      <origin
+        xyz="0.0361839079462923 2.09127868135983E-05 -0.185012067507171"
+        rpy="0 0 0" />
+      <mass
+        value="13.649633544176" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot/meshes/link3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.909803921568627 0.443137254901961 0.0313725490196078 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot/meshes/link3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="link3">
+    <material>Gazebo/Yellow</material>
+  </gazebo>
+  <joint
+    name="joint3"
+    type="revolute">
+    <origin
+      xyz="0 0.777773579919563 0"
+      rpy="0 0 0" />
+    <parent
+      link="link2" />
+    <child
+      link="link3" />
+    <axis
+      xyz="1 0 0" />
+    <limit effort="100" velocity="100" lower="0" upper="3.1416"/>
+  </joint>
+  <link
+    name="link4">
+    <inertial>
+      <origin
+        xyz="0 2.77555756156289E-17 -0.143700987107576"
+        rpy="0 0 0" />
+      <mass
+        value="3.83524054978555" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot/meshes/link4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.909803921568627 0.443137254901961 0.0313725490196078 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot/meshes/link4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="link4">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <joint
+    name="joint4"
+    type="revolute">
+    <origin
+      xyz="0.0483407685108505 0 -0.603280829801762"
+      rpy="0 0 -1.5707963267949" />
+    <parent
+      link="link3" />
+    <child
+      link="link4" />
+    <axis
+      xyz="-1 0 0" />
+    <limit effort="100" velocity="100" lower="0" upper="3.1416"/>
+  </joint>
+</robot>

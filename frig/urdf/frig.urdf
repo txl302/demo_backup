@@ -1,0 +1,46 @@
+<robot
+  name="frig">
+  <link
+    name="frig">
+    <inertial>
+      <origin
+        xyz="-2.9194E-06 0.00929310000000005 0.88752"
+        rpy="0 0 0" />
+      <mass
+        value="1244.2" />
+      <inertia
+        ixx="388.488523357977"
+        ixy="0.0013881293894654"
+        ixz="-0.00193606418588468"
+        iyy="411.515126726996"
+        iyz="0.0148498594502099"
+        izz="146.202850380644" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5707963267949 0 0" />
+      <geometry>
+        <mesh
+          filename="package://frig/meshes/frig.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.64706 0.61961 0.58824 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5707963267949 0 0" />
+      <geometry>
+        <mesh
+          filename="package://frig/meshes/frig.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="frig">
+    <material>Gazebo/Gold</material>
+  </gazebo>
+</robot>
