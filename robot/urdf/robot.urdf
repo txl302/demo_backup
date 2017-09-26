@@ -1,15 +1,19 @@
-<robot
-  name="robot">
-  <link name="world"/>
-  <joint name="joint_fix" type="fixed">
-    <parent link="world"/>
-    <child link="base_link"/>
-  </joint>
-  <link
-    name="base_link">
+<?xml version="1.0" encoding="UTF-8"?>
+<robot name="robot">
+
+<!-- world link -->
+<link name="world"/>
+
+<!-- base_link and its fixed joint -->
+<joint name="joint_fix" type="fixed">
+  <parent link="world"/>
+  <child link="base_link"/>
+</joint>
+
+  <link name="base_link">
     <inertial>
       <origin
-        xyz="0.158521271152247 0.249959501847145 0.530785966844897"
+        xyz="5.43344915542855E-09 0.0443960955613357 0.500000172877206"
         rpy="0 0 0" />
       <mass
         value="17.8923575005348" />
@@ -45,14 +49,11 @@
       </geometry>
     </collision>
   </link>
-  <gazebo reference="base_link">
-    <material>Gazebo/Black</material>
-  </gazebo>
-  <link
-    name="link1">
+
+  <link name="link1">
     <inertial>
       <origin
-        xyz="1.68454688698194E-07 0.164275740780367 -0.0669943121573496"
+        xyz="1.68454688766964E-07 0.164275740780367 -0.0669943121573495"
         rpy="0 0 0" />
       <mass
         value="19.3943177662416" />
@@ -88,14 +89,10 @@
       </geometry>
     </collision>
   </link>
-  <gazebo reference="link1">
-    <material>Gazebo/Yellow</material>
-  </gazebo>
-  <joint
-    name="joint1"
-    type="revolute">
+
+  <joint name="joint1" type="continuous">
     <origin
-      xyz="0.158521265718797 -0.530785793967691 0.315563406285809"
+      xyz="0 -0.5 0.11"
       rpy="1.5707963267949 0 0" />
     <parent
       link="base_link" />
@@ -103,13 +100,12 @@
       link="link1" />
     <axis
       xyz="0 1 0" />
-    <limit effort="100" velocity="100" lower="0" upper="3.1416"/>
   </joint>
-  <link
-    name="link2">
+
+  <link name="link2">
     <inertial>
       <origin
-        xyz="0.0328384782772146 0.274326458730004 3.31401572850609E-14"
+        xyz="0.0328384782772146 0.274326458730003 3.31679128606766E-14"
         rpy="0 0 0" />
       <mass
         value="20.8227875150365" />
@@ -145,12 +141,10 @@
       </geometry>
     </collision>
   </link>
-  <gazebo reference="link2">
-    <material>Gazebo/Yellow</material>
-  </gazebo>
+
   <joint
     name="joint2"
-    type="revolute">
+    type="continuous">
     <origin
       xyz="0 0.322732802998902 -0.250383739680009"
       rpy="0 0 0" />
@@ -160,7 +154,6 @@
       link="link2" />
     <axis
       xyz="1 0 0" />
-    <limit effort="100" velocity="100" lower="0" upper="3.1416"/>
   </joint>
   <link
     name="link3">
@@ -202,12 +195,9 @@
       </geometry>
     </collision>
   </link>
-  <gazebo reference="link3">
-    <material>Gazebo/Yellow</material>
-  </gazebo>
   <joint
     name="joint3"
-    type="revolute">
+    type="continuous">
     <origin
       xyz="0 0.777773579919563 0"
       rpy="0 0 0" />
@@ -217,13 +207,12 @@
       link="link3" />
     <axis
       xyz="1 0 0" />
-    <limit effort="100" velocity="100" lower="0" upper="3.1416"/>
   </joint>
   <link
     name="link4">
     <inertial>
       <origin
-        xyz="0 2.77555756156289E-17 -0.143700987107576"
+        xyz="2.22044604925031E-16 1.38777878078145E-17 -0.143700987107576"
         rpy="0 0 0" />
       <mass
         value="3.83524054978555" />
@@ -259,14 +248,11 @@
       </geometry>
     </collision>
   </link>
-  <gazebo reference="link4">
-    <material>Gazebo/Red</material>
-  </gazebo>
   <joint
     name="joint4"
-    type="revolute">
+    type="continuous">
     <origin
-      xyz="0.0483407685108505 0 -0.603280829801762"
+      xyz="0.0483407685108506 0 -0.603280829801762"
       rpy="0 0 -1.5707963267949" />
     <parent
       link="link3" />
@@ -274,6 +260,21 @@
       link="link4" />
     <axis
       xyz="-1 0 0" />
-    <limit effort="100" velocity="100" lower="0" upper="3.1416"/>
   </joint>
+
+  <gazebo reference="base_link">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <gazebo reference="link1">
+    <material>Gazebo/Orange</material>
+  </gazebo>
+  <gazebo reference="link2">
+    <material>Gazebo/Orange</material>
+  </gazebo>
+  <gazebo reference="link3">
+    <material>Gazebo/Orange</material>
+  </gazebo>
+  <gazebo reference="link4">
+    <material>Gazebo/Red</material>
+  </gazebo>
 </robot>

@@ -7,7 +7,7 @@
 for robot robot</p>
   </description>
   <author>me</author>
-  <maintainer email="tao@todo.todo">tao</maintainer>
+  <maintainer email="txl302@case.edu" />
   <license>BSD</license>
   <buildtool_depend>catkin</buildtool_depend>
   <build_depend>roslaunch</build_depend>
